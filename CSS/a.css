@@ -41,6 +41,17 @@ body {
     width: 200px; /* Largura do item */
 }
 
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    left: 0;
+    right: 0;
+}
+
+
 .pokemon-item img {
     width: 100x; /* Largura da imagem */
     height: 100px; /* Altura da imagem */

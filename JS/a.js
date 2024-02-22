@@ -26,7 +26,7 @@ async function getPokemon() {
     if (pokemonDiv.children.length > 5) {
         pokemonDiv.classList.add('pokemon-list');
     }
-    if (pokemonDiv.children.length > 24) {
+    if (pokemonDiv.children.length > 15) {
         pokemonDiv.removeChild(pokemonDiv.children[0])
     }
 }

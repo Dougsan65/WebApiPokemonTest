@@ -1,0 +1,95 @@
+li {
+    list-style-type: none;
+}
+body {
+    font-family: Arial, sans-serif;
+    
+    margin: 0;
+    padding: 0;
+}
+
+.centralDiv {
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.InputPoke  {
+    /* centralizar  */
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    
+    /* estilizar */
+    
+}
+
+.pokemon-item {
+    margin-bottom: 10px; /* Espaçamento inferior entre os itens */
+    padding: 10px; /* Espaçamento interno dentro dos itens */
+    margin-right: 10px; /* Espaçamento à direita entre os itens */
+    border: 1px solid #ccc; /* Borda sólida cinza */
+    border-radius: 5px; /* Borda arredondada */
+    background-color: #f0f0f0; /* Cor de fundo cinza claro */
+    transition: background-color 0.3s; /* Transição suave de cor de fundo */
+    cursor: pointer; /* Muda o cursor do mouse para indicar que o item é clicável */    
+    width: 200px; /* Largura do item */
+}
+
+.pokemon-item img {
+    width: 100x; /* Largura da imagem */
+    height: 100px; /* Altura da imagem */
+    display: block; /* Para centralizar a imagem */
+    
+    margin: 0 auto; /* Para centralizar a imagem */
+    box-shadow: 0 0 5px #0f53ab; /* Sombra ao redor da imagem */
+    border-radius: 100%; /* Imagem redonda */
+}
+.pokemon-item:hover {
+    background-color: #e0e0e0; /* Cor de fundo cinza mais claro */
+}
+
+.flex-container {
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.pokemon-list {
+    padding-left: 10%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.blockButton {
+    pointer-events: none; /* Torna o botão inacessível */
+    opacity: 0.5; /* Opacidade reduzida para indicar que está inativo */
+}
+
+.pokemon-name {
+
+    margin-top: 10px; /* Espaçamento superior */
+    font-weight: bold; /* Texto em negrito */
+    text-transform: capitalize; /* Capitalize */
+    display: flex;
+    justify-content: center;
+
+}
+
+.buttonPegarPokemon {
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d1e800;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}

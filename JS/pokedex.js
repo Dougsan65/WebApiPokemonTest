@@ -1,8 +1,8 @@
 let pokemonsAtuais = []
-let paginaAtual = 1
+let ActualPage = 1
 
 async function getPokedex() {
-    const apiAddressModifiedPokedex = 'https://pokeapi.co/api/v2/pokedex/1/?limit=100&offset=0';
+    const apiAddressModifiedPokedex = 'https://pokeapi.co/api/v2/pokedex/1/';
     
     const response = await fetch(apiAddressModifiedPokedex);
     const data = await response.json();
@@ -16,7 +16,7 @@ async function showPokemons() {
     pokemonDiv.innerHTML = '';
 
     const limit = 20;
-    const start = (paginaAtual - 1) * limit;
+    const start = (ActualPage - 1) * limit;
     const end = Math.min(start + limit, pokemonsAtuais.length);
     
     for (let i = start; i < end; i++) {
@@ -35,23 +35,40 @@ async function showPokemons() {
         pokemonDiv.appendChild(imgPoke);
     }
     const totalPages = Math.ceil(pokemonsAtuais.length / limit);
-    document.getElementById('pageCounter').innerText = `Página ${paginaAtual} de ${totalPages}`;
+    document.getElementById('pageCounter').innerText = `Página ${ActualPage} de ${totalPages}`;
 }
 getPokedex();
 
 
 document.getElementById('previousPage').addEventListener('click', function() {
-    paginaAtual--;
-    if (paginaAtual < 1) {
-        paginaAtual = Math.ceil(pokemonsAtuais.length / 20);
+    ActualPage--;
+    if (ActualPage < 1) {
+        ActualPage = Math.ceil(pokemonsAtuais.length / 20);
     }
     showPokemons();
 });
 document.getElementById('nextPage').addEventListener('click', function() {
-    paginaAtual++;
-    if (paginaAtual > Math.ceil(pokemonsAtuais.length / 20)) {
-        paginaAtual = 1;
+    ActualPage++;
+    if (ActualPage > Math.ceil(pokemonsAtuais.length / 20)) {
+        ActualPage = 1;
     }
     showPokemons();
 });
+
+document.addEventListener('keydown', function(event) {
+    if (event.code === 'ArrowLeft') {
+        ActualPage--;
+        if (ActualPage < 1) {
+            ActualPage = Math.ceil(pokemonsAtuais.length / 20);
+        }
+        showPokemons();
+    } else if (event.code === 'ArrowRight') {
+        ActualPage++;
+        if (ActualPage > Math.ceil(pokemonsAtuais.length / 20)) {
+            ActualPage = 1;
+        }
+        showPokemons();
+    }
+});
+
 document.getElementById('getPokemonsPokedex').addEventListener('click', getPokedex);

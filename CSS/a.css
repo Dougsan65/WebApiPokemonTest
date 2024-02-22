@@ -40,6 +40,15 @@ body {
     cursor: pointer; /* Muda o cursor do mouse para indicar que o item é clicável */    
     width: 200px; /* Largura do item */
 }
+.pokemon-item img {
+    width: 100x; /* Largura da imagem */
+    height: 100px; /* Altura da imagem */
+    display: block; /* Para centralizar a imagem */
+    
+    margin: 0 auto; /* Para centralizar a imagem */
+    box-shadow: 0 0 5px #ffea00; /* Sombra ao redor da imagem */
+    border-radius: 100%; /* Imagem redonda */
+}
 
 .pagination-container {
     display: flex;
@@ -52,15 +61,6 @@ body {
 }
 
 
-.pokemon-item img {
-    width: 100x; /* Largura da imagem */
-    height: 100px; /* Altura da imagem */
-    display: block; /* Para centralizar a imagem */
-    
-    margin: 0 auto; /* Para centralizar a imagem */
-    box-shadow: 0 0 5px #0f53ab; /* Sombra ao redor da imagem */
-    border-radius: 100%; /* Imagem redonda */
-}
 .pokemon-item:hover {
     background-color: #e0e0e0; /* Cor de fundo cinza mais claro */
 }
@@ -89,6 +89,13 @@ body {
     display: flex;
     justify-content: center;
 
+}
+
+#pageCounter {
+    text-align: center; /* Alinha o texto no centro */
+    margin-top: 20px; /* Margem superior para separar do conteúdo acima */
+    font-size: 16px; /* Tamanho da fonte */
+    color: #333; /* Cor do texto */
 }
 
 .buttonPegarPokemon {

@@ -39,8 +39,6 @@ form.addEventListener('submit', async (e) => {
     const requestData = {};
     formData.forEach((value, key) => {
         requestData[key] = value;
-        console.log(value, key);
-        console.log(requestData);
     });
 
     try {
@@ -59,7 +57,30 @@ form.addEventListener('submit', async (e) => {
         }
     } catch (error) {
         console.error(error);
-        alert('An error occurred while creating the video');
+        alert('API Failed to create video');
     }
 });
+
+
+
+document.getElementById('delete-button').addEventListener('click', async (e) => {
+    e.preventDefault();
+    const id = document.getElementById('id').value;
+    try {
+        const response = await fetch(`https://api-nodejs-7vxu.onrender.com/videos/${id}`, {
+            method: 'DELETE'
+        });
+        if (response.ok) {
+            alert('Video deleted successfully!');
+        } else {
+            throw new Error('Failed to delete video');
+        }
+    } catch (error) {
+        console.error(error);
+        alert('API failed to delete the video');
+    }
+});
+
+
+   
 

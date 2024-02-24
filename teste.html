@@ -7,22 +7,35 @@
     <link rel="stylesheet" href="CSS/a.css">
 </head>
 <body>
+    
     <h1>Video CRUD App</h1>
 
     <h2>Videos</h2>
+    <label for="id">ID: </label>
+    <input type="text" id="id" name="id">
     <form id="create-form">
+
         <label for="title">Title:</label>
         <input type="text" id="title" name="title" required>
+
         <label for="description">Description:</label>
         <textarea id="description" name="description" required></textarea>
+
         <label for="duration">Duration:</label>
-        <input type="text" id="duration" name="duration" required>
+        <input type="number" id="duration" name="duration" required>
+
         <label for="zone">Zone:</label>
         <input type="text" id="zone" name="zone" required>
+
         <button type="submit">Create</button>
+        <button type="submit" id="update-button" >Update</button>
     </form>
+    <button type="submit" id ="delete-button" >Delete</button>
     <button id="fetch-button">Fetch Videos</button>
-    <ul id="video-list"></ul>
+    <ul id="video-list">
+        <!-- Videos will be inserted here -->
+    </ul>
+
 
 
     <script src="JS/teste.js"></script>

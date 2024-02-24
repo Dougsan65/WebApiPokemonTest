@@ -30,10 +30,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     const liZone = document.createElement('span');
                     liZone.textContent = `Zona:${video.zone} `;
 
+                    const liId = document.createElement('span');
+                    liId.textContent = `ID: ${video.id} `;
+
                     divVideo.appendChild(liTitle);  
                     divVideo.appendChild(liDescription);
                     divVideo.appendChild(liDuration);
                     divVideo.appendChild(liZone);
+                    divVideo.appendChild(liId);
                     videoList.appendChild(divVideo);
                     
                 });

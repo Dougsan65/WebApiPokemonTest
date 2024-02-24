@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function fetchVideos() {
         try {
-            const response = await fetch('https://api-nodejs-7vxu.onrender.com/videos'); // Substitua com o URL real da sua API
+            const response = await fetch('https://api-nodejs-7vxu.onrender.com/videos'); 
             console.log(response);
             if (response.ok) {
                 const videos = await response.json();
@@ -52,7 +52,7 @@ form.addEventListener('submit', async (e) => {
             body: JSON.stringify(requestData)
         });
         if (response.ok) {
-            form.reset();
+            console.log('asdasdsa'+response);
             alert('Video created successfully!');
         } else {
             throw new Error('Failed to create video');

@@ -89,10 +89,14 @@ document.getElementById('update-button').addEventListener('click', async (e) => 
     e.preventDefault();
     const id = document.getElementById('id').value;
     const formData = new FormData(document.getElementById('create-form'));
+    console.log(formData);
     const requestData = {};
     formData.forEach((value, key) => {
+        console.log(value);
+        console.log(key);
         requestData[key] = value;
     });
+    console.log(JSON.stringify(requestData));
 
     try {
         const response = await fetch(`https://api-nodejs-7vxu.onrender.com/videos/${id}`, {

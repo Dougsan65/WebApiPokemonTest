@@ -14,6 +14,25 @@ body {
     padding: 0;
 }
 
+.divVideo {
+    width: 200px; /* Defina o tamanho desejado */
+    height: 200px; /* Mesma altura que a largura para fazer a div quadrada */
+    border: 1px solid #ccc; /* Adiciona uma borda para visualização */
+    margin-bottom: 10px; /* Adiciona um espaço entre as divs */
+    display: inline-block; /* Faz as divs ficarem lado a lado */
+    background-color: #f4f4f4;
+    padding: 10px;
+    margin: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.divVideo:hover {
+    background-color: #e0e0e0;
+    cursor: pointer;
+}
+
 /* Estilos para os elementos <li> */
 #video-list li {
     background-color: #f4f4f4;

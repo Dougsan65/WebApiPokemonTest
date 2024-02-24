@@ -1,4 +1,3 @@
-
 //Metodo GET
 document.addEventListener('DOMContentLoaded', () => {
     const videoList = document.getElementById('video-list');
@@ -16,9 +15,27 @@ document.addEventListener('DOMContentLoaded', () => {
                 const videos = await response.json();
                 videoList.innerHTML = '';
                 videos.forEach(video => {
-                    const li = document.createElement('li');
-                    li.textContent = `Titulo: ${video.title} Descrição:${video.description} Duracão: ${video.duration} Zone: ${video.zone} ID do video: ${video.id}`;
-                    videoList.appendChild(li);
+                    const divVideo = document.createElement('div');
+                    divVideo.classList.add('divVideo');
+                    const liTitle = document.createElement('span');
+                    liTitle.textContent = `Titulo:${video.title} `;
+                    liTitle.classList.add('title');
+
+                    const liDescription = document.createElement('span');
+                    liDescription.textContent = `Descrição:${video.description} `;
+
+                    const liDuration = document.createElement('span');
+                    liDuration.textContent = `Duração:${video.duration} `;
+
+                    const liZone = document.createElement('span');
+                    liZone.textContent = `Zona:${video.zone} `;
+
+                    divVideo.appendChild(liTitle);  
+                    divVideo.appendChild(liDescription);
+                    divVideo.appendChild(liDuration);
+                    divVideo.appendChild(liZone);
+                    videoList.appendChild(divVideo);
+                    
                 });
             } else {
                 throw new Error('Failed to fetch videos');
@@ -116,4 +133,3 @@ document.getElementById('update-button').addEventListener('click', async (e) => 
         alert('API failed to update the video');
     }
 });
-

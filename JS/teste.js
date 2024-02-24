@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 videoList.innerHTML = '';
                 videos.forEach(video => {
                     const li = document.createElement('li');
-                    li.textContent = `Titulo: ${video.title} Duracão: ${video.duration} ID do video: ${video.id}`;
+                    li.textContent = `Titulo: ${video.title} Descrição:${video.description} Duracão: ${video.duration} Zone: ${video.zone} ID do video: ${video.id}`;
                     videoList.appendChild(li);
                 });
             } else {

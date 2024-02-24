@@ -1,3 +1,5 @@
+
+//Metodo GET
 document.addEventListener('DOMContentLoaded', () => {
     const videoList = document.getElementById('video-list');
     const fetchButton = document.getElementById('fetch-button');
@@ -32,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const form = document.getElementById('create-form');
 
-
+//Metodo POST
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const formData = new FormData(form);
@@ -62,7 +64,7 @@ form.addEventListener('submit', async (e) => {
 });
 
 
-
+//Metodo DELETE
 document.getElementById('delete-button').addEventListener('click', async (e) => {
     e.preventDefault();
     const id = document.getElementById('id').value;
@@ -82,5 +84,32 @@ document.getElementById('delete-button').addEventListener('click', async (e) => 
 });
 
 
-   
+//Metodo PUT
+document.getElementById('update-button').addEventListener('click', async (e) => {
+    e.preventDefault();
+    const id = document.getElementById('id').value;
+    const formData = new FormData(document.getElementById('create-form'));
+    const requestData = {};
+    formData.forEach((value, key) => {
+        requestData[key] = value;
+    });
+
+    try {
+        const response = await fetch(`https://api-nodejs-7vxu.onrender.com/videos/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(requestData)
+        });
+        if (response.ok) {
+            alert('Video updated successfully!');
+        } else {
+            throw new Error('Failed to update video');
+        }
+    } catch (error) {
+        console.error(error);
+        alert('API failed to update the video');
+    }
+});
 

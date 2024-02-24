@@ -8,6 +8,27 @@ body {
     padding: 0;
 }
 
+#video-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para os elementos <li> */
+#video-list li {
+    background-color: #f4f4f4;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo ao passar o mouse */
+#video-list li:hover {
+    background-color: #e0e0e0;
+    cursor: pointer;
+}
+
 .centralDiv {
     margin: 10px;
     padding: 10px;

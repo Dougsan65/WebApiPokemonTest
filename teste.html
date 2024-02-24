@@ -4,15 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video CRUD App</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="CSS/a.css">
 </head>
 <body>
     <h1>Video CRUD App</h1>
 
     <h2>Videos</h2>
+    <form id="create-form">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required>
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea>
+        <label for="duration">Duration:</label>
+        <input type="text" id="duration" name="duration" required>
+        <label for="zone">Zone:</label>
+        <input type="text" id="zone" name="zone" required>
+        <button type="submit">Create</button>
+    </form>
+    <button id="fetch-button">Fetch Videos</button>
     <ul id="video-list"></ul>
 
-    <button id="fetch-button">Fetch Videos</button>
 
     <script src="JS/teste.js"></script>
 </body>

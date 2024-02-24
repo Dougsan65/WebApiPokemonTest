@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 videoList.innerHTML = '';
                 videos.forEach(video => {
                     const li = document.createElement('li');
-                    li.textContent = `${video.title} - ${video.duration}`;
+                    li.textContent = `Titulo: ${video.title} Duracão: ${video.duration} ID do video: ${video.id}`;
                     videoList.appendChild(li);
                 });
             } else {
@@ -26,4 +26,40 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('An error occurred while fetching videos');
         }
     }
+
+    
 });
+
+const form = document.getElementById('create-form');
+
+
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const requestData = {};
+    formData.forEach((value, key) => {
+        requestData[key] = value;
+        console.log(value, key);
+        console.log(requestData);
+    });
+
+    try {
+        const response = await fetch('https://api-nodejs-7vxu.onrender.com/videos', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(requestData)
+        });
+        if (response.ok) {
+            form.reset();
+            alert('Video created successfully!');
+        } else {
+            throw new Error('Failed to create video');
+        }
+    } catch (error) {
+        console.error(error);
+        alert('An error occurred while creating the video');
+    }
+});
+

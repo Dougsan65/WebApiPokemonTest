@@ -36,6 +36,8 @@ form.addEventListener('submit', async (e) => {
             
             if (data.length > 0 || dataEmail.length > 0) {
                 alert('Usuário ou e-mail já registrado!');
+                document.getElementById('login-data').classList.add('hidden');
+                document.getElementById('login-form').classList.remove('hidden');
                 return;
             }
         } else {
@@ -62,9 +64,10 @@ form.addEventListener('submit', async (e) => {
         alert('Falha na comunicação com o servidor');
     }
     
-    
+});
 
-
- 
-
+document.getElementById('alreadyRegistred').addEventListener('click', async (e) => {
+    e.preventDefault();
+    document.getElementById('login-data').classList.add('hidden');
+    document.getElementById('login-form').classList.remove('hidden');
 });

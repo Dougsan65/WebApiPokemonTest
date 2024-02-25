@@ -123,3 +123,9 @@ formLogin.addEventListener('submit', async (e) => {
     }
     
 });
+
+document.getElementById('notRegistred').addEventListener('click', async (e) => {
+    e.preventDefault();
+    document.getElementById('login-form').classList.add('hidden');
+    document.getElementById('login-data').classList.remove('hidden');
+});

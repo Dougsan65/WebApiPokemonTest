@@ -53,9 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
 });
 
-const form = document.getElementById('create-form');
 
 //Metodo POST
+const form = document.getElementById('create-form');
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const formData = new FormData(form);

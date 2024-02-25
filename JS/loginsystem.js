@@ -73,3 +73,53 @@ document.getElementById('alreadyRegistred').addEventListener('click', async (e) 
     document.getElementById('login-data').classList.add('hidden');
     document.getElementById('login-form').classList.remove('hidden');
 });
+
+formLogin = document.getElementById('login-form')
+formLogin.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const formData = new FormData(formLogin);
+    const requestData = {};
+    formData.forEach((value, key) => {
+        requestData[key] = value;
+        console.log(key, value)
+
+    });
+    // verificar se o usuario ja existe
+    console.log(requestData);
+    document.getElementById('carregando').innerHTML = 'Carregando...';
+    document.getElementById('carregando').classList.add('carregando');
+    try {
+        const response = await fetch(`https://api-nodejs-7vxu.onrender.com/usuariosregistrados?search=${requestData['name']}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+    
+        
+        document.getElementById('carregando').innerHTML = '';
+        document.getElementById('carregando').classList.remove('carregando');
+        if (response.ok) {
+            data = await response.json();
+            console.log(data[0]['senha']);
+            if (data.length > 0) {
+                if (data[0]['senha'] === requestData['password']) {
+                    alert('Usuário logado com sucesso!');
+                } else {
+                    alert('Senha ou usuario incorreta!');
+                }
+            }else{
+                alert('Usuário não registrado!');
+            }
+        } else {
+            throw new Error('Falha ao verificar usuário ou e-mail');
+        }
+    
+        
+    } catch (error) {
+        console.error(error);
+        alert('Falha na comunicação com o servidor');
+    }
+    
+});

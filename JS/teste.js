@@ -9,7 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function fetchVideos() {
         try {
+            document.getElementById('carregando').innerHTML = 'Carregando...';
+            document.getElementById('carregando').classList.add('carregando');
             const response = await fetch('https://api-nodejs-7vxu.onrender.com/videos'); 
+            document.getElementById('carregando').innerHTML = '...';
+            document.getElementById('carregando').classList.remove('carregando');
             console.log(response);
             if (response.ok) {
                 const videos = await response.json();
@@ -65,6 +69,8 @@ form.addEventListener('submit', async (e) => {
     });
 
     try {
+        document.getElementById('carregando').innerHTML = 'Carregando...';
+        document.getElementById('carregando').classList.add('carregando');
         const response = await fetch('https://api-nodejs-7vxu.onrender.com/videos', {
             method: 'POST',
             headers: {
@@ -72,6 +78,8 @@ form.addEventListener('submit', async (e) => {
             },
             body: JSON.stringify(requestData)
         });
+        document.getElementById('carregando').innerHTML = '';
+        document.getElementById('carregando').classList.remove('carregando');
         if (response.ok) {
             console.log('asdasdsa'+response);
             alert('Video created successfully!');
@@ -90,9 +98,13 @@ document.getElementById('delete-button').addEventListener('click', async (e) => 
     e.preventDefault();
     const id = document.getElementById('id').value;
     try {
+        document.getElementById('carregando').innerHTML = 'Carregando...';
+        document.getElementById('carregando').classList.add('carregando');
         const response = await fetch(`https://api-nodejs-7vxu.onrender.com/videos/${id}`, {
             method: 'DELETE'
         });
+        document.getElementById('carregando').innerHTML = '';
+        document.getElementById('carregando').classList.remove('carregando');
         if (response.ok) {
             alert('Video deleted successfully!');
         } else {
@@ -120,6 +132,8 @@ document.getElementById('update-button').addEventListener('click', async (e) => 
     console.log(JSON.stringify(requestData));
 
     try {
+        document.getElementById('carregando').innerHTML = 'Carregando...';
+        document.getElementById('carregando').classList.add('carregando');
         const response = await fetch(`https://api-nodejs-7vxu.onrender.com/videos/${id}`, {
             method: 'PUT',
             headers: {
@@ -127,6 +141,8 @@ document.getElementById('update-button').addEventListener('click', async (e) => 
             },
             body: JSON.stringify(requestData)
         });
+        document.getElementById('carregando').innerHTML = '';
+        document.getElementById('carregando').classList.remove('carregando');
         if (response.ok) {
             alert('Video updated successfully!');
         } else {

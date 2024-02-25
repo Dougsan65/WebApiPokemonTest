@@ -11,6 +11,8 @@ form.addEventListener('submit', async (e) => {
     });
     const emailForm = requestData['email'];
     // verificar se o usuario ja existe
+    document.getElementById('carregando').innerHTML = 'Carregando...';
+    document.getElementById('carregando').classList.add('carregando');
     try {
         const response = await fetch(`https://api-nodejs-7vxu.onrender.com/usuariosregistrados?search=${requestData['name']}`, {
             method: 'GET',
@@ -25,6 +27,8 @@ form.addEventListener('submit', async (e) => {
                 'Content-Type': 'application/json'
             }
         });
+        document.getElementById('carregando').innerHTML = '';
+        document.getElementById('carregando').classList.remove('carregando');
         if (response.ok || responseEmail.ok) {
             const data = await response.json();
             const dataEmail = await responseEmail.json();

@@ -55,6 +55,8 @@ form.addEventListener('submit', async (e) => {
         if (registerResponse.ok) {
             const data = await registerResponse.json();
             console.log(data);
+            document.getElementById('login-data').classList.add('hidden');
+            document.getElementById('login-form').classList.remove('hidden');
             alert('Registrado com sucesso!');
         } else {
             throw new Error('Falha ao registrar usuário');

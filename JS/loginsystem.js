@@ -148,5 +148,5 @@ document.getElementById('notRegistred').addEventListener('click', async (e) => {
 document.getElementById('logout').addEventListener('click', async (e) => {
     e.preventDefault();
     localStorage.removeItem('token');
-    window.location.href = 'loginPage.html';
+    window.location.href = 'index.html';
 });

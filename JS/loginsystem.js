@@ -93,7 +93,7 @@ formLogin.addEventListener('submit', async (e) => {
     document.getElementById('carregando').innerHTML = 'Carregando...';
     document.getElementById('carregando').classList.add('carregando');
     try {
-        const response = await fetch(`http://localhost:3333/autenticacaologin`, {
+        const response = await fetch(`https://api-nodejs-7vxu.onrender.com/autenticacaologin`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

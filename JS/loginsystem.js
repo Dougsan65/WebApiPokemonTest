@@ -63,7 +63,7 @@ form.addEventListener('submit', async (e) => {
         }
     } catch (error) {
         console.error(error);
-        alert('Falha na comunicação com o servidor');
+        alert('Falha na comunicação com o servidor'+error);
     }
     
 });
@@ -81,8 +81,11 @@ formLogin.addEventListener('submit', async (e) => {
     const formData = new FormData(formLogin);
     const requestData = {};
     formData.forEach((value, key) => {
-        requestData[key] = value;
-        console.log(key, value)
+        if (key === 'name') {
+            requestData['name'] = value;
+        } else if (key === 'password') {
+            requestData['password'] = value;
+        }
 
     });
     // verificar se o usuario ja existe
@@ -90,36 +93,29 @@ formLogin.addEventListener('submit', async (e) => {
     document.getElementById('carregando').innerHTML = 'Carregando...';
     document.getElementById('carregando').classList.add('carregando');
     try {
-        const response = await fetch(`https://api-nodejs-7vxu.onrender.com/usuariosregistrados?search=${requestData['name']}`, {
-            method: 'GET',
+        const response = await fetch(`http://localhost:3333/autenticacaologin`, {
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
-            }
+            },
+            body: JSON.stringify(requestData)
         });
     
         
         document.getElementById('carregando').innerHTML = '';
         document.getElementById('carregando').classList.remove('carregando');
         if (response.ok) {
-            data = await response.json();
-            console.log(data[0]['senha']);
-            if (data.length > 0) {
-                if (data[0]['senha'] === requestData['password']) {
-                    alert('Usuário logado com sucesso!');
-                } else {
-                    alert('Senha ou usuario incorreta!');
-                }
-            }else{
-                alert('Usuário não registrado!');
-            }
+            const data = await response.json();
+            alert('Logado com sucesso!');
+            console.log(data);
         } else {
-            throw new Error('Falha ao verificar usuário ou e-mail');
+            alert('Usuario ou senha incorretos!');
         }
     
         
     } catch (error) {
         console.error(error);
-        alert('Falha na comunicação com o servidor');
+        
     }
     
 });

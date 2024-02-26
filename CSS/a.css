@@ -52,8 +52,6 @@ body {
     display: none;
 }
 
-
-
 .divVideo {
     width: 200px; /* Defina o tamanho desejado */
     height: 200px; /* Mesma altura que a largura para fazer a div quadrada */
@@ -73,7 +71,6 @@ body {
     cursor: pointer;
 }
 
-/* Estilos para os elementos <li> */
 #video-list li {
     background-color: #f4f4f4;
     padding: 10px;
@@ -82,7 +79,6 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo ao passar o mouse */
 #video-list li:hover {
     background-color: #e0e0e0;
     cursor: pointer;
@@ -120,6 +116,7 @@ body {
     cursor: pointer; /* Muda o cursor do mouse para indicar que o item é clicável */    
     width: 200px; /* Largura do item */
 }
+
 .pokemon-item img {
     width: 100x; /* Largura da imagem */
     height: 100px; /* Altura da imagem */
@@ -139,7 +136,6 @@ body {
     left: 0;
     right: 0;
 }
-
 
 .pokemon-item:hover {
     background-color: #e0e0e0; /* Cor de fundo cinza mais claro */

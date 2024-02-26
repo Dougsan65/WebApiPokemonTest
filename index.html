@@ -3,27 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokemon Web!</title>
-    <link rel="stylesheet" href="/CSS/a.css">
+    <title>LoginPage</title>
+    <link rel="stylesheet" href="CSS/a.css">
 </head>
 <body>
-    <a href="pokedex.html">a</a>
-    <a href="teste.html">api</a>
-    <a href="loginPage.html">login</a>
-    <!-- Div Input -->
-    <div class="centralDiv"> 
-        <form id="textInputForm">
-            <input type="text" id="textInput" placeholder="Digite um Pokemon" class="InputPoke">
-        </form>
-        <button id="getPokemons" class="blockButton buttonPegarPokemon">Pegar Imagem do Pokemon</button>
-    </div>
     
-    <!-- Div da listagem dos Pokemons -->
-    <div >
-        <ul id="pokemons" ></ul>
+    <div class="login-container">
+        <div id="carregando"></div>
+        <form action="submit" class="login-form" id="login-data">
+            <h1 style="font-size: 24px;">Register your account</h1>
+            <label for="username">Username:</label>
+            <input type="text" id="username_register" name="name" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email_register" name="email" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password_register" name="password" required><br><br>
+            <input type="submit" value="Submit">
+            <button id="alreadyRegistred">im registred</button>
+        </form>
+        <!-- Login Form -->
+        <form action="submit" class="login-form hidden" id="login-form"> 
+            <h1>Login</h1>
+            <label for="username">Username:</label>
+            <input type="text" id="username_login" name="name" ><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password_login" name="password"><br><br>
+            <input type="submit" value="Submit" id="loginButton">
+            <button id="notRegistred">im not registred</button>
+        </form>
+        <button id="logout">Logout</button>
     </div>
     
 
-    <script src="/JS/a.js"></script>
+
+    <script src="JS/loginsystem.js"></script>
 </body>
 </html>

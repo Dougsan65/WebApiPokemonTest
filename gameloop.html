@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/a.css">
+</head>
+<body>
+    <div class="mainpage">
+        <div id="carregando"></div>
+        <h1>Requisição dos metodos de uma API REST: POST, PUT, GET, DELETE. </h1>
+        <label for="id">ID: </label>
+        <input type="text" id="id" name="id" placeholder="DELETAR OU ALTERAR">
+        <form id="create-form">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required>
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required></textarea>
+            <label for="duration">Duration:</label>
+            <input type="number" id="duration" name="duration" required>
+            <label for="zone">Zone:</label>
+            <input type="text" id="zone" name="zone" required>
+            <button type="submit">Create</button>
+            <button type="submit" id="update-button" >Update</button>
+        </form>
+        <button type="submit" id ="delete-button" >Delete</button>
+        <button id="fetch-button">Fetch Videos</button>
+        <ul id="video-list">
+            <!-- Videos will be inserted here -->
+        </ul>
+    </div>
+    <script src="JS/mainpage.js"></script>
+</body>
+</html>

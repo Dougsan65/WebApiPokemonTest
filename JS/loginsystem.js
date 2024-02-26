@@ -1,3 +1,5 @@
+
+// Register System
 form = document.getElementById('login-data')
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -68,15 +70,24 @@ form.addEventListener('submit', async (e) => {
     
 });
 
+
+//Button to go to login form
 document.getElementById('alreadyRegistred').addEventListener('click', async (e) => {
     e.preventDefault();
     document.getElementById('login-data').classList.add('hidden');
     document.getElementById('login-form').classList.remove('hidden');
 });
 
+
+// Login System
 formLogin = document.getElementById('login-form')
 formLogin.addEventListener('submit', async (e) => {
     e.preventDefault();
+    token = localStorage.getItem('token');
+    if (token) {
+        alert('Você já está logado!');
+        window.location.href = 'gameloop.html';
+    }
     
     const formData = new FormData(formLogin);
     const requestData = {};
@@ -106,8 +117,11 @@ formLogin.addEventListener('submit', async (e) => {
         document.getElementById('carregando').classList.remove('carregando');
         if (response.ok) {
             const data = await response.json();
+            const token = data.token;
+            localStorage.setItem('token', token);
+            console.log(token);
             alert('Logado com sucesso!');
-            console.log(data);
+           
         } else {
             alert('Usuario ou senha incorretos!');
         }
@@ -120,8 +134,19 @@ formLogin.addEventListener('submit', async (e) => {
     
 });
 
+
+
+
+//Button to go to register form
 document.getElementById('notRegistred').addEventListener('click', async (e) => {
     e.preventDefault();
     document.getElementById('login-form').classList.add('hidden');
     document.getElementById('login-data').classList.remove('hidden');
+});
+
+// Button logout
+document.getElementById('logout').addEventListener('click', async (e) => {
+    e.preventDefault();
+    localStorage.removeItem('token');
+    window.location.href = 'loginPage.html';
 });

@@ -119,6 +119,8 @@ formLogin.addEventListener('submit', async (e) => {
             const data = await response.json();
             const token = data.token;
             localStorage.setItem('token', token);
+            localStorage.setItem('name', requestData['name']);
+            window.location.href = 'gameloop.html';
             console.log(token);
             alert('Logado com sucesso!');
            
@@ -148,5 +150,9 @@ document.getElementById('notRegistred').addEventListener('click', async (e) => {
 document.getElementById('logout').addEventListener('click', async (e) => {
     e.preventDefault();
     localStorage.removeItem('token');
+    localStorage.removeItem('name');
     window.location.href = 'index.html';
 });
+
+const token123 = localStorage.getItem('token');
+console.log(token123);

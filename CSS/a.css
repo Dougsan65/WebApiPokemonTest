@@ -8,6 +8,15 @@ body {
     padding: 0;
 }
 
+#usuariologado{
+    text-transform: capitalize;
+    text-align: right;
+    padding: 10px;
+    background-color: #f4f4f4;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
 #video-list {
     list-style-type: none;
     margin: 0;

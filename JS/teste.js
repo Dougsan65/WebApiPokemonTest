@@ -1,5 +1,10 @@
 //Metodo GET
 document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('usuariologado').innerHTML = localStorage.getItem('name');
+
+});
+
+document.addEventListener('DOMContentLoaded', () => {
     const videoList = document.getElementById('video-list');
     const fetchButton = document.getElementById('fetch-button');
 

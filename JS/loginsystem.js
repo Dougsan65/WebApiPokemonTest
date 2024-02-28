@@ -108,9 +108,11 @@ formLogin.addEventListener('submit', async (e) => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
+                
             },
             body: JSON.stringify(requestData)
         });
+        console.log(JSON.stringify(requestData));
     
         
         document.getElementById('carregando').innerHTML = '';

@@ -112,7 +112,11 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('carregando').classList.add('carregando');
             const response = await fetch(`https://api-nodejs-7vxu.onrender.com/videos/${id}`, {
                 method: 'DELETE',
-                'Authorization': `${token}`
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `${token}`
+                },
+                
             });
             document.getElementById('carregando').innerHTML = '';
             document.getElementById('carregando').classList.remove('carregando');

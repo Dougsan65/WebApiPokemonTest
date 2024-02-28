@@ -63,7 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } catch (error) {
             console.error(error);
-            alert('An error occurred while fetching videos');
+            alert('Your Login has expired, please login again!');
+            window.location.href = 'index.html';
+            localStorage.removeItem('token');
         }
     }
     
@@ -98,7 +100,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } catch (error) {
             console.error(error);
-            alert('API Failed to create video');
+            alert('Your Login has expired, please login again!');
+            window.location.href = 'index.html';
+            localStorage.removeItem('token');
         }
 
     });
@@ -127,7 +131,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } catch (error) {
             console.error(error);
-            alert('API failed to delete the video');
+            alert('Your Login has expired, please login again!');
+            window.location.href = 'index.html';
+            localStorage.removeItem('token');
         }
     });
 
@@ -165,7 +171,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } catch (error) {
             console.error(error);
-            alert('API failed to update the video');
+            alert('Your Login has expired, please login again!');
+            window.location.href = 'index.html';
+            localStorage.removeItem('token');
         }
     });
 

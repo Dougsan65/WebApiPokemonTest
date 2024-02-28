@@ -1,7 +1,10 @@
 let pokemonsAtuais = []
 let ActualPage = 1
 
+
+
 async function getPokedex() {
+    
     const apiAddressModifiedPokedex = 'https://pokeapi.co/api/v2/pokedex/1/';
     
     const response = await fetch(apiAddressModifiedPokedex);
@@ -48,6 +51,7 @@ async function showPokemons() {
     const totalPages = Math.ceil(pokemonsAtuais.length / limit);
     document.getElementById('pageCounter').innerText = `Página ${ActualPage} de ${totalPages}`;
 }
+
 getPokedex();
 
 // Eventos dos botões de página

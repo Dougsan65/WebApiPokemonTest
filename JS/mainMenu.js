@@ -4,11 +4,7 @@ const links = document.querySelectorAll('ul li');
 const audioClick = document.getElementById("menuClick");
 const audioHover = document.getElementById("audioHover");
 const jogarButton = document.getElementById('Jogar');
-console.log(links);
-jogarButton.addEventListener('click', () => {
-    
-    clickSound();
-});
+
 
 sound.addEventListener('click', () => {
     if (video.muted == false) {

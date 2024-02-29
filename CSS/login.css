@@ -19,7 +19,8 @@ video{
 }
 
 body{
-    padding-left: 10vh;
+    padding-top: 8vh;
+    padding-left: 1vh;
     display: flex;
     justify-content: left;
     align-items: center;

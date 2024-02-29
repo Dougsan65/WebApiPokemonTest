@@ -62,3 +62,8 @@ document.getElementById('mainGame').addEventListener('click', () => {
     clickSound();
     setTimeout(function() {window.location.href = '/Pages/gameloop.html'}, 1000); 
 });
+
+document.getElementById('pokedex').addEventListener('click', () => {
+    clickSound();
+    setTimeout(function() {window.location.href = '/Pages/pokedex.html'}, 1000); 
+});

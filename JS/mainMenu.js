@@ -54,9 +54,8 @@ document.getElementById('logout').addEventListener('click', () => {
         localStorage.removeItem('tokenTemp');
         localStorage.removeItem('name');
         
-        console.log('a');
         window.location.href = 'index.html';
-    }, 1000); // 1000 milliseconds = 1 segundo
+    }, 1000); 
 });
 
 document.getElementById('mainGame').addEventListener('click', () => {

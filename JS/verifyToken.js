@@ -1,5 +1,5 @@
 async function tokenVerify() {
-    response = await fetch('http:/localhost:3333/verificartoken', {
+    response = await fetch('https://api-nodejs-7vxu.onrender.com/verificartoken', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',

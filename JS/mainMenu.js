@@ -11,16 +11,19 @@ jogarButton.addEventListener('click', () => {
 });
 
 sound.addEventListener('click', () => {
-    sound.classList.toggle('fa-volume-up');
-
     if (video.muted == false) {
         video.muted = true;
-    }else {
+        sound.classList.remove('fa-volume-up');
+        sound.classList.add('fa-volume-mute');
+    } else {
         video.muted = false;
+        sound.classList.remove('fa-volume-mute');
+        sound.classList.add('fa-volume-up');
     }
 
     clickSound();
 });
+
 
 sound.addEventListener('mouseenter', hoverSound());
 for (let i = 0; i < links.length; i++) {

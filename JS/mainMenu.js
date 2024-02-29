@@ -5,7 +5,6 @@ const audioClick = document.getElementById("menuClick");
 const audioHover = document.getElementById("audioHover");
 const jogarButton = document.getElementById('Jogar');
 
-
 sound.addEventListener('click', () => {
     if (video.muted == false) {
         video.muted = true;
@@ -24,7 +23,6 @@ sound.addEventListener('click', () => {
 sound.addEventListener('mouseenter', hoverSound());
 for (let i = 0; i < links.length; i++) {
     links[i].addEventListener('mouseenter', hoverSound);
-    console.log(links[i]);
 }
 
 for (let i = 0; i < links.length; i++) {
@@ -43,5 +41,25 @@ function hoverSound(){
 
 document.getElementById('account-Create').addEventListener('click', () => {
     clickSound();
-    setTimeout(function() {window.location.href = 'registerPage.html'}, 1000); 
+    setTimeout(function() {window.location.href = 'loginPage.html'}, 1000); 
+});
+
+document.getElementById('logout').addEventListener('click', () => {
+    // 1. Testar a reprodução do som isoladamente
+    clickSound();
+    
+    // 2. Forçar um pequeno atraso antes de mudar de página
+    setTimeout(() => {
+        localStorage.removeItem('token');
+        localStorage.removeItem('tokenTemp');
+        localStorage.removeItem('name');
+        
+        console.log('a');
+        window.location.href = 'index.html';
+    }, 1000); // 1000 milliseconds = 1 segundo
+});
+
+document.getElementById('mainGame').addEventListener('click', () => {
+    clickSound();
+    setTimeout(function() {window.location.href = 'gameloop.html'}, 1000); 
 });

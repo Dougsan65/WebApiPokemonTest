@@ -41,7 +41,7 @@ function hoverSound(){
 
 document.getElementById('account-Create').addEventListener('click', () => {
     clickSound();
-    setTimeout(function() {window.location.href = 'loginPage.html'}, 1000); 
+    setTimeout(function() {window.location.href = '/Pages/loginPage.html'}, 1000); 
 });
 
 document.getElementById('logout').addEventListener('click', () => {
@@ -54,11 +54,11 @@ document.getElementById('logout').addEventListener('click', () => {
         localStorage.removeItem('tokenTemp');
         localStorage.removeItem('name');
         
-        window.location.href = 'index.html';
+        window.location.href = '/index.html';
     }, 1000); 
 });
 
 document.getElementById('mainGame').addEventListener('click', () => {
     clickSound();
-    setTimeout(function() {window.location.href = 'gameloop.html'}, 1000); 
+    setTimeout(function() {window.location.href = '/Pages/gameloop.html'}, 1000); 
 });

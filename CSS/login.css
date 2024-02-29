@@ -11,6 +11,24 @@
   display: none;
 }
 
+.logoGame {
+  border-radius: 50%;
+  position: absolute;
+  top: 1%;
+  left: 1%;
+  background-color: white;
+  display: flex;
+    
+    
+
+}
+
+.logoGame:hover {
+  cursor: pointer;
+}
+
+
+
 video{
     position: absolute;
     min-width: 100%;

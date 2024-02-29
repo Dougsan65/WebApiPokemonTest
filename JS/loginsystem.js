@@ -7,7 +7,7 @@ formLogin.addEventListener('submit', async (e) => {
     token = localStorage.getItem('token');
     if (token) {
         alert('Você já está logado!');
-        window.location.href = 'gameloop.html';
+        window.location.href = '/Pages/gameloop.html';
     }
     
     const formData = new FormData(formLogin);
@@ -41,7 +41,7 @@ formLogin.addEventListener('submit', async (e) => {
             const token = data.token;
             localStorage.setItem('token', token);
             localStorage.setItem('name', requestData['name']);
-            window.location.href = 'gameloop.html';
+            window.location.href = '/Pages/gameloop.html';
             console.log(token);
             alert('Logado com sucesso!');
            
@@ -55,6 +55,11 @@ formLogin.addEventListener('submit', async (e) => {
         
     }
     
+});
+
+document.getElementById('logoPoke').addEventListener('click', () => {
+    clickSound();
+    setTimeout(function() {window.location.href = '/index.html'}, 1000); 
 });
 
 async function clickSound() {

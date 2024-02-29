@@ -79,3 +79,13 @@ form.addEventListener('submit', async (e) => {
     }
     
 });
+
+document.getElementById('logoPoke').addEventListener('click', () => {
+    clickSound()
+    setTimeout(function() {window.location.href = '/index.html'}, 1000); 
+});
+
+async function clickSound() {
+    var audio = new Audio('src/audio/menu/clickMenu.wav');
+    await audio.play();
+}

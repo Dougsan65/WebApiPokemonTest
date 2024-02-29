@@ -6,6 +6,12 @@ async function tokenVerify() {
             'Authorization': `${token}`
         }
     });
+    if (response.ok) {
+        console.log('Token verificado com sucesso!');
+    } else {
+        alert('Você precisa estar logado para acessar esta página, ou seu login expirou!');
+        window.location.href = '/index.html';
+    }
 }
 
 

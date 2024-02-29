@@ -31,12 +31,17 @@ for (let i = 0; i < links.length; i++) {
     links[i].addEventListener('click', clickSound);
 }
 
-function clickSound() {
+async function clickSound() {
     var audio = new Audio('src/audio/menu/clickMenu.wav');
-    audio.play();
+    await audio.play();
 }
 
 function hoverSound(){
     var audio = new Audio('src/audio/menu/clickHover.wav');
     audio.play();
 }
+
+document.getElementById('account-Create').addEventListener('click', () => {
+    clickSound();
+    setTimeout(function() {window.location.href = 'registerPage.html'}, 1000); 
+});

@@ -15,6 +15,7 @@ body{
 }
 
 video{
+    
     position: absolute;
     min-width: 100%;
     min-height: 100vh;
@@ -96,6 +97,23 @@ audio{
 .menu li:hover, #sound:hover{
     color: #dbdbdb;
 
+}
+
+.login-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2em;
+    border-radius: 1em;
+    display: none;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 @media screen and (max-width:800px) {

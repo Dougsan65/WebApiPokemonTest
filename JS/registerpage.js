@@ -10,7 +10,7 @@ form.addEventListener('submit', async (e) => {
 
     });
     try {
-        const responseTokenTemp = await fetch(`http://localhost:3333/gerartokenTemporario`, {
+        const responseTokenTemp = await fetch(`https://api-nodejs-7vxu.onrender.com/usuariosregistrados/gerartokenTemporario`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

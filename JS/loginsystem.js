@@ -41,7 +41,7 @@ formLogin.addEventListener('submit', async (e) => {
             const token = data.token;
             localStorage.setItem('token', token);
             localStorage.setItem('name', requestData['name']);
-            window.location.href = '/Pages/gameloop.html';
+            window.location.href = '/Pages/criarPersonagem.html';
             console.log(token);
             alert('Logado com sucesso!');
            

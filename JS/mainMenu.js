@@ -50,9 +50,7 @@ document.getElementById('logout').addEventListener('click', () => {
     
     // 2. Forçar um pequeno atraso antes de mudar de página
     setTimeout(() => {
-        localStorage.removeItem('token');
-        localStorage.removeItem('tokenTemp');
-        localStorage.removeItem('name');
+        localStorage.clear();
         
         window.location.href = '/index.html';
     }, 1000); 
@@ -60,7 +58,7 @@ document.getElementById('logout').addEventListener('click', () => {
 
 document.getElementById('mainGame').addEventListener('click', () => {
     clickSound();
-    setTimeout(function() {window.location.href = '/Pages/gameloop.html'}, 1000); 
+    setTimeout(function() {window.location.href = '/Pages/criarPersonagem.html'}, 1000); 
 });
 
 document.getElementById('pokedex').addEventListener('click', () => {

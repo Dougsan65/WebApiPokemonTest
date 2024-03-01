@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon - Criar Personagem</title>
+    <link rel="stylesheet" href="/CSS/criarPersonagem.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="/src/imgs/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="esconder loading" id="loading">
+        <img src="/src/imgs/loading.gif" alt="loading">
+    </div>
+    <div id="myModal" class="modal hidden">
+        <div class="modal-content">
+          <span class="close" id="closeModal">&times;</span>
+          <p>Escreva o nome do personagem:</p>
+          <input type="text" id="characterName">
+          <button id="confirmName">Confirmar</button>
+        </div>
+      </div>
+      <div class="logoGame">
+        <img src="/src/imgs/poke.png" id="logoPoke" alt="Pokemon Logo">
+    </div>  
+      
+    <div class="personagemCaixa">
+        <video autoplay loop muted id="videobackground">
+            <source src="/src/audio/menu/menuBackground.mp4" type="video/mp4">
+        </video>
+        
+        <div class="personagem" id="personagem1">
+            
+            <h1 id="name01">CREATE</h1>
+            <i class='bx bx-plus-circle 2x' style="font-size: 80px; color: white;" id="select-createChar01"></i>
+            <span>Level:<span id="level"> </span></span>
+            <span>Pokemons Capturados:<span id="qntdPokes"></span></span>
+            <span>Insignias:<span id="qntdInsignias"></span></span>
+
+            <button id="chooseChar01">Escolher</button>
+        </div>
+
+        <div class="personagem" id="personagem2">
+            
+            <h1 id="name02">CREATE</h1>
+            <i class='bx bx-plus-circle 2x' style="font-size: 80px; color: white;" id="select-createChar02"></i>
+            <span>Level:<span id="level"> </span></span>
+            <span>Pokemons Capturados:<span id="qntdPokes"></span></span>
+            <span>Insignias:<span id="qntdInsignias"></span></span>
+
+            <button id="chooseChar02">Escolher</button>
+        </div>
+        <div class="personagem" id="personagem3">
+            
+            <h1 id="name03">CREATE</h1>
+            <i class='bx bx-plus-circle 2x' style="font-size: 80px; color: white;" id="select-createChar03"></i>
+            <span>Level:<span id="level"> </span></span>
+            <span>Pokemons Capturados:<span id="qntdPokes"></span></span>
+            <span>Insignias:<span id="qntdInsignias"></span></span>
+            
+
+            <button id="chooseChar03">Escolher</button>
+        </div>
+        
+    </div>
+    <script src="/JS/verifyToken.js"></script>
+    <script src="/JS/loadChar.js"></script>
+    <script src="/JS/createChar.js"></script>
+</body>
+</html>

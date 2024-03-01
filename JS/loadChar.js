@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", async function() {
-    // Carregar personagens
     try {
         const response = await fetch('https://api-nodejs-7vxu.onrender.com/personagens', {
             method: 'GET',
@@ -22,13 +21,22 @@ document.addEventListener("DOMContentLoaded", async function() {
         
         for (let i = 0; i < data.length; i++) {
             const char = data[i];
-            console.log(data[i]);
             localStorage.setItem(`name0${i+1}`, char.nomepersonagem);
         }
 
         // Adicionar os personagens no HTML
         for (let i = 1; i <= data.length; i++) {
             document.getElementById(`name0${i}`).innerHTML = localStorage.getItem(`name0${i}`);
+        }
+
+        // Ocultar botões de criação de personagem se o nome do personagem já estiver definido
+        for (let i = 1; i <= 3; i++) {
+            const nameElement = document.getElementById(`name0${i}`);
+            const createButton = document.getElementById(`select-createChar0${i}`);
+            
+            if (nameElement && nameElement.innerHTML.trim() !== 'CREATE') {
+                createButton.classList.add('hidden');
+            }
         }
         
     } catch (error) {

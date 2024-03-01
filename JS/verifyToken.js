@@ -21,6 +21,11 @@ async function tokenVerify() {
 const token = localStorage.getItem('token');
 
 if (!token) {
+    //bloquear css e html
+    const styleTag = document.createElement('style');
+    styleTag.innerHTML = 'body { display: none; }';
+    document.head.appendChild(styleTag);
+
     alert('Você precisa estar logado para acessar esta página!');
     // Se o token não estiver presente, redirecione o usuário para a página de login
     window.location.href = '/Pages/loginPage.html';

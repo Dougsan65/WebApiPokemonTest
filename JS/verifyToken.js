@@ -23,7 +23,7 @@ const token = localStorage.getItem('token');
 if (!token) {
     //bloquear css e html
     const styleTag = document.createElement('style');
-    styleTag.innerHTML = 'body { display: none; }';
+    styleTag.innerHTML = 'body { display: none !important;  }';
     document.head.appendChild(styleTag);
 
     alert('Você precisa estar logado para acessar esta página!');

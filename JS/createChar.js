@@ -24,7 +24,7 @@ document.getElementById('select-createChar01').addEventListener('click', functio
         modal.classList.add('hidden'); // Fechar o modal após confirmar o nome
 
         // Adicionar o nome no banco de dados
-        const response = fetch('http://localhost:3333/criarpersonagem', {
+        const response = fetch('https://api-nodejs-7vxu.onrender.com/criarpersonagem', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ document.getElementById('select-createChar02').addEventListener('click', functio
         modal.classList.add('hidden'); // Fechar o modal após confirmar o nome
 
         // Adicionar o nome no banco de dados
-        const response = fetch('http://localhost:3333/criarpersonagem', {
+        const response = fetch('https://api-nodejs-7vxu.onrender.com/criarpersonagem', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -98,7 +98,7 @@ document.getElementById('select-createChar03').addEventListener('click', functio
         modal.classList.add('hidden'); // Fechar o modal após confirmar o nome
 
         // Adicionar o nome no banco de dados
-        const response = fetch('http://localhost:3333/criarpersonagem', {
+        const response = fetch('https://api-nodejs-7vxu.onrender.com/criarpersonagem', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

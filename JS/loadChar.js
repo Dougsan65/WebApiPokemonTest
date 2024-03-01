@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", async function() {
     // Carregar personagens
     try {
-        const response = await fetch('http://localhost:3333/personagens', {
+        const response = await fetch('https://api-nodejs-7vxu.onrender.com/personagens', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

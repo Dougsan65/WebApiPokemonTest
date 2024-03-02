@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             document.getElementById('carregando').innerHTML = 'Carregando...';
             document.getElementById('carregando').classList.add('carregando');
-            const response = await fetch('https://api-nodejs-7vxu.onrender.com/videos', {
+            const response = await fetch('https://back-end-application-p34r.onrender.com/videos/listar', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             document.getElementById('carregando').innerHTML = 'Carregando...';
             document.getElementById('carregando').classList.add('carregando');
-            const response = await fetch('https://api-nodejs-7vxu.onrender.com/videos', {
+            const response = await fetch('https://back-end-application-p34r.onrender.com/videos/criar', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             document.getElementById('carregando').innerHTML = 'Carregando...';
             document.getElementById('carregando').classList.add('carregando');
-            const response = await fetch(`https://api-nodejs-7vxu.onrender.com/videos/${id}`, {
+            const response = await fetch(`https://back-end-application-p34r.onrender.com/videos/deletar/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             document.getElementById('carregando').innerHTML = 'Carregando...';
             document.getElementById('carregando').classList.add('carregando');
-            const response = await fetch(`https://api-nodejs-7vxu.onrender.com/videos/${id}`, {
+            const response = await fetch(`https://back-end-application-p34r.onrender.com/videos/editar/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error(error);
             alert('Your Login has expired, please login again!');
             window.location.href = 'index.html';
-            localStorage.removeItem('token');
+            localStorage.clear();
         }
     });
 

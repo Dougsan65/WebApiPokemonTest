@@ -9,7 +9,7 @@ async function tokenVerify() {
     if (response.ok) {
         console.log('Token verificado com sucesso!');
     } else {
-        alert('Seu login expirou! Faça login novamente!');
+        alert('Seu login expirou! Faça login novamente!');-
         localStorage.removeItem('token');
         localStorage.removeItem('name');
         window.location.href = '/Pages/loginPage.html';

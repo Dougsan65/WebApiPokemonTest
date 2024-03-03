@@ -1,13 +1,15 @@
 async function tokenVerify() {
-    response = await fetch('https://api-nodejs-7vxu.onrender.com/verificartoken', {
+    const response = await fetch('https://back-end-application-p34r.onrender.com/auth/VerifyToken', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `${token}`
         }
     });
+    console.log(response);
     if (response.ok) {
         console.log('Token verificado com sucesso!');
+        console.log(response.id);
     } else {
         alert('Seu login expirou! Faça login novamente!');-
         localStorage.removeItem('token');

@@ -13,8 +13,8 @@ formLogin.addEventListener('submit', async (e) => {
     const formData = new FormData(formLogin);
     const requestData = {};
     formData.forEach((value, key) => {
-        if (key === 'name') {
-            requestData['name'] = value;
+        if (key === 'username') {
+            requestData['username'] = value;
         } else if (key === 'password') {
             requestData['password'] = value;
         }
@@ -24,7 +24,7 @@ formLogin.addEventListener('submit', async (e) => {
     console.log(requestData);
 
     try {
-        const response = await fetch(`https://api-nodejs-7vxu.onrender.com/autenticacaologin`, {
+        const response = await fetch(`https://back-end-application-p34r.onrender.com/usuarios/autenticarUsuario`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -39,6 +39,8 @@ formLogin.addEventListener('submit', async (e) => {
         if (response.ok) {
             const data = await response.json();
             const token = data.token;
+            const levelUser = data.leveluser;
+            console.log(data);
             localStorage.setItem('token', token);
             localStorage.setItem('name', requestData['name']);
             window.location.href = '/Pages/criarPersonagem.html';

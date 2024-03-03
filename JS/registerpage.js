@@ -6,37 +6,16 @@ form.addEventListener('submit', async (e) => {
     const requestData = {};
     formData.forEach((value, key) => {
         requestData[key] = value;
-        console.log(key)
-
     });
-    try {
-        const responseTokenTemp = await fetch(`https://api-nodejs-7vxu.onrender.com/gerartokenTemporario`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(requestData)
-        });
-        const responsetokenTemp = await responseTokenTemp.json();
-        const tokenTemp = responsetokenTemp.token;
-        localStorage.setItem('tokenTemp', tokenTemp);
-        
-    } catch (error) {
-        console.error(error);
-    }
     
-
     try {
         const tokenTemp = localStorage.getItem('tokenTemp');
-        const response = await fetch(`https://api-nodejs-7vxu.onrender.com/usuariosregistrados?search=${requestData['name']}`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': tokenTemp
-            }
-        });
-    
-        const responseEmail = await fetch(`https://api-nodejs-7vxu.onrender.com/emailsregistrados?search=${requestData['email']}`, {
+        const username = requestData['username'];
+        const email = requestData['email'];
+
+        console.log(username, email);
+
+        const response = await fetch(`https://back-end-application-p34r.onrender.com/usuarios/checkUserExist/${username}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -44,30 +23,29 @@ form.addEventListener('submit', async (e) => {
             }
         });
 
-        if (response.ok || responseEmail.ok) {
-            const data = await response.json();
-            const dataEmail = await responseEmail.json();
-            console.log(data.length, dataEmail.length);
-            
-            if (data.length > 0 || dataEmail.length > 0) {
-                alert('Usuário ou e-mail já registrado!');
-                return;
+        const responseEmail = await fetch(`https://back-end-application-p34r.onrender.com/usuarios/checkEmailExist/${email}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': tokenTemp
             }
-        } else {
-            throw new Error('Falha ao verificar usuário ou e-mail');
+        });
+        console.log(response, responseEmail);
+        if (!response.ok || !responseEmail.ok) {
+            alert('Usuário ou e-mail já registrado!');
+            return;
         }
-    
-        const registerResponse = await fetch('https://api-nodejs-7vxu.onrender.com/registrarusuario', {
+
+        const registerResponse = await fetch('https://back-end-application-p34r.onrender.com/usuarios/criarUsuario', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(requestData)
         });
-    
+
         if (registerResponse.ok) {
             const data = await registerResponse.json();
-            console.log(data);
             localStorage.removeItem('tokenTemp');
             alert('Registrado com sucesso!');
         } else {
@@ -75,9 +53,8 @@ form.addEventListener('submit', async (e) => {
         }
     } catch (error) {
         console.error(error);
-        alert('Falha na comunicação com o servidor'+error);
+        alert('Falha na comunicação com o servidor');
     }
-    
 });
 
 document.getElementById('logoPoke').addEventListener('click', () => {

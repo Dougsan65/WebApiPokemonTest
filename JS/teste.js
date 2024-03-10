@@ -29,9 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log(response);
             if (response.ok) {
                 const videos = await response.json();
+                const videosData = videos.data;
                 const videoList = document.getElementById('video-list');
                 videoList.innerHTML = '';
-                videos.forEach(video => {
+                videosData.forEach(video => {
                     const divVideo = document.createElement('div');
                     divVideo.classList.add('divVideo');
                     const liTitle = document.createElement('span');

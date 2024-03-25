@@ -40,11 +40,13 @@ formLogin.addEventListener('submit', async (e) => {
             const data = await response.json();
             const token = data.token;
             const levelUser = data.leveluser;
+            const name = data.username;
             console.log(data);
             localStorage.setItem('token', token);
-            localStorage.setItem('name', requestData['name']);
+            localStorage.setItem('name', name);
             window.location.href = '/Pages/criarPersonagem.html';
             console.log(token);
+            console.log(name)
             alert('Logado com sucesso!');
            
         } else {

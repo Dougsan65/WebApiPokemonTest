@@ -1,49 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pokemon - Register</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="/CSS/login.css">
-    <link rel="shortcut icon" href="/src/imgs/favicon.ico" type="image/x-icon">
-</head>
-<body>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/CSS/login.css" />
+    <link
+      rel="shortcut icon"
+      href="/src/imgs/favicon.ico"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
     <video autoplay loop muted id="videobackground">
-        <source src="/src/audio/menu/menu2Background.mp4" type="video/mp4">
+      <source src="/src/audio/menu/menu2Background.mp4" type="video/mp4" />
     </video>
     <div class="logoGame">
-        <img src="/src/imgs/poke.png" id="logoPoke" alt="Pokemon Logo">
+      <img src="/src/imgs/poke.png" id="logoPoke" alt="Pokemon Logo" />
     </div>
     <div class="wrapper">
-        <form action="submit" id="login-form">
-            <h1>Login</h1>
-            <div class="input-box">
-                <input type="text" placeholder="Username" id="username_login" name="username">
-                <i class='bx bxs-user'></i>
+      <form action="submit" id="login-form">
+        <h1>Login</h1>
+        <div class="input-box">
+          <input
+            type="text"
+            placeholder="Username"
+            id="username_login"
+            name="username"
+          />
+          <i class="bx bxs-user"></i>
+        </div>
+        <div class="input-box">
+          <input
+            type="password"
+            placeholder="Password"
+            id="password_login"
+            name="password"
+          />
+          <i class="bx bxs-lock-alt"></i>
+        </div>
+        <div class="remember-forgot">
+          <label for="remember"><input type="checkbox" />Remember me</label>
+          <a href="#">Forgot password?</a>
+        </div>
+        <button type="" class="btn" id="loginButton">Login</button>
 
-                
-            </div>
-            <div class="input-box">
-                <input type="password" placeholder="Password" id="password_login" name="password">
-                <i class='bx bxs-lock-alt'></i>
-            </div>
-            <div class="remember-forgot">
-                <label for="remember"><input type="checkbox">Remember me</label>
-                <a href="#">Forgot password?</a>
-            </div>
-            <button type="" class="btn" id="loginButton">
-                Login
-            </button>
-
-            <div class="register-link">
-                <p>Don't have an account? <a href="registerPage.html">Register Here</a></p>
-               
-            </div>
-        </form>
+        <div class="register-link">
+          <p>
+            Don't have an account? <a href="registerPage.html">Register Here</a>
+          </p>
+        </div>
+      </form>
     </div>
 
-   
     <script src="/JS/loginsystem.js"></script>
-</body>
+  </body>
 </html>

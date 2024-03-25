@@ -1,198 +1,192 @@
 li {
-    list-style-type: none;
+  list-style-type: none;
 }
 body {
-    font-family: Arial, sans-serif;
-    
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+
+  margin: 0;
+  padding: 0;
 }
 
-#usuariologado{
-    text-transform: capitalize;
-    text-align: right;
-    padding: 10px;
-    background-color: #f4f4f4;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
+#usuariologado {
+  text-transform: capitalize;
+  text-align: right;
+  padding: 10px;
+  background-color: #f4f4f4;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #video-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-.login-form{
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
+.login-form {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.carregando{
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 50px;
-
+.carregando {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
 }
 
 .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 .divVideo {
-    width: 200px; /* Defina o tamanho desejado */
-    height: 200px; /* Mesma altura que a largura para fazer a div quadrada */
-    border: 1px solid #ccc; /* Adiciona uma borda para visualização */
-    margin-bottom: 10px; /* Adiciona um espaço entre as divs */
-    display: inline-block; /* Faz as divs ficarem lado a lado */
-    background-color: #f4f4f4;
-    padding: 10px;
-    margin: 10px;
-    margin-bottom: 5px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 200px; /* Defina o tamanho desejado */
+  height: 200px; /* Mesma altura que a largura para fazer a div quadrada */
+  border: 1px solid #ccc; /* Adiciona uma borda para visualização */
+  margin-bottom: 10px; /* Adiciona um espaço entre as divs */
+  display: inline-block; /* Faz as divs ficarem lado a lado */
+  background-color: #f4f4f4;
+  padding: 10px;
+  margin: 10px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .divVideo:hover {
-    background-color: #e0e0e0;
-    cursor: pointer;
+  background-color: #e0e0e0;
+  cursor: pointer;
 }
 
 #video-list li {
-    background-color: #f4f4f4;
-    padding: 10px;
-    margin-bottom: 5px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #f4f4f4;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #video-list li:hover {
-    background-color: #e0e0e0;
-    cursor: pointer;
+  background-color: #e0e0e0;
+  cursor: pointer;
 }
 
 .centralDiv {
-    margin: 10px;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.InputPoke  {
-    /* centralizar  */
-    margin: 10px;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    
-    /* estilizar */
-    
+.InputPoke {
+  /* centralizar  */
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+
+  /* estilizar */
 }
 
 .pokemon-item {
-    margin-bottom: 10px; /* Espaçamento inferior entre os itens */
-    padding: 10px; /* Espaçamento interno dentro dos itens */
-    margin-right: 10px; /* Espaçamento à direita entre os itens */
-    border: 1px solid #ccc; /* Borda sólida cinza */
-    border-radius: 5px; /* Borda arredondada */
-    background-color: #f0f0f0; /* Cor de fundo cinza claro */
-    transition: background-color 0.3s; /* Transição suave de cor de fundo */
-    cursor: pointer; /* Muda o cursor do mouse para indicar que o item é clicável */    
-    width: 200px; /* Largura do item */
+  margin-bottom: 10px; /* Espaçamento inferior entre os itens */
+  padding: 10px; /* Espaçamento interno dentro dos itens */
+  margin-right: 10px; /* Espaçamento à direita entre os itens */
+  border: 1px solid #ccc; /* Borda sólida cinza */
+  border-radius: 5px; /* Borda arredondada */
+  background-color: #f0f0f0; /* Cor de fundo cinza claro */
+  transition: background-color 0.3s; /* Transição suave de cor de fundo */
+  cursor: pointer; /* Muda o cursor do mouse para indicar que o item é clicável */
+  width: 200px; /* Largura do item */
 }
 
 .pokemon-item img {
-    width: 100x; /* Largura da imagem */
-    height: 100px; /* Altura da imagem */
-    display: block; /* Para centralizar a imagem */
-    
-    margin: 0 auto; /* Para centralizar a imagem */
-    box-shadow: 0 0 5px #ffea00; /* Sombra ao redor da imagem */
-    border-radius: 100%; /* Imagem redonda */
+  width: 100x; /* Largura da imagem */
+  height: 100px; /* Altura da imagem */
+  display: block; /* Para centralizar a imagem */
+
+  margin: 0 auto; /* Para centralizar a imagem */
+  box-shadow: 0 0 5px #ffea00; /* Sombra ao redor da imagem */
+  border-radius: 100%; /* Imagem redonda */
 }
 
 .pagination-container {
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    bottom: 20px;
-    width: 100%;
-    left: 0;
-    right: 0;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+  left: 0;
+  right: 0;
 }
 
 .pokemon-item:hover {
-    background-color: #e0e0e0; /* Cor de fundo cinza mais claro */
+  background-color: #e0e0e0; /* Cor de fundo cinza mais claro */
 }
 
 .flex-container {
-    flex-direction: row;
-    justify-content: flex-start;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 .pokemon-list {
-    padding-left: 10%;
-    display: flex;
-    flex-wrap: wrap;
+  padding-left: 10%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .blockButton {
-    pointer-events: none; /* Torna o botão inacessível */
-    opacity: 0.5; /* Opacidade reduzida para indicar que está inativo */
+  pointer-events: none; /* Torna o botão inacessível */
+  opacity: 0.5; /* Opacidade reduzida para indicar que está inativo */
 }
 
 .pokemon-name {
-
-    margin-top: 10px; /* Espaçamento superior */
-    font-weight: bold; /* Texto em negrito */
-    text-transform: capitalize; /* Capitalize */
-    display: flex;
-    justify-content: center;
-
+  margin-top: 10px; /* Espaçamento superior */
+  font-weight: bold; /* Texto em negrito */
+  text-transform: capitalize; /* Capitalize */
+  display: flex;
+  justify-content: center;
 }
 
 #pageCounter {
-    text-align: center; /* Alinha o texto no centro */
-    margin-top: 20px; /* Margem superior para separar do conteúdo acima */
-    font-size: 16px; /* Tamanho da fonte */
-    color: #333; /* Cor do texto */
+  text-align: center; /* Alinha o texto no centro */
+  margin-top: 20px; /* Margem superior para separar do conteúdo acima */
+  font-size: 16px; /* Tamanho da fonte */
+  color: #333; /* Cor do texto */
 }
 
 .buttonPegarPokemon {
-    margin: 10px;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #d1e800;
-    color: black;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d1e800;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
